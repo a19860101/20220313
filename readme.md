@@ -82,3 +82,5 @@ git commit -m "message"
 ```
 
 > -m 指的是message。在commit的時候一定要有-m，否則無法commit
+
+## git remote
