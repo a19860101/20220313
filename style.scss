@@ -17,7 +17,7 @@ a {
 
 @for $i from 1 through 12 {
     .box-#{$i} {
-        width: 100% / 12 * $i
+        width: 100% / 12 * $i;
     }
 }
 
@@ -27,28 +27,52 @@ $colors: red green blue;
         background-color: $color;
     }
 }
-$cols : 12;
+$cols: 12;
 $breakpoints: (
-    'sm':600px,
-    'md':960px,
-    'lg':1200px,
-    'xl':1600px
+    "none":0,
+    "sm": 520px,
+    "md": 960px,
+    "lg": 1200px,
+    "xl": 1600px,
 );
 
-@each $name,$width in $breakpoints {
-    .box-#{$name}{
+@each $name, $width in $breakpoints {
+    .box-#{$name} {
         width: $width;
     }
 }
-
-@each $name,$width in $breakpoints {
-    @media(min-width:$width ){
+.container {
+    width: 100%;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+@each $name, $width in $breakpoints {
+    @media (min-width: $width) {
+        @if($name == 'none'){
+            .container {
+                width: 100%;
+            }
+        }
+        @else{
+            .container {
+                width: $width;
+                margin: auto;
+            }
+        }
+        
         @for $i from 1 through $cols {
-            .col-#{$name}-#{$i} {
-                flex:0 0 100% / $cols * $i;
+            @if($name == 'none'){
+                .col-#{$i} {
+                    flex: 0 0 100% / $cols * $i;
+                }
+            }
+            @else{
+                .col-#{$name}-#{$i} {
+                    flex: 0 0 100% / $cols * $i;
+                }
             }
         }
     }
 }
-
-
