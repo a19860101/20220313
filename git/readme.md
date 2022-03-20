@@ -9,7 +9,7 @@
 
 ## 安裝Git
 
-https://git-scm.com/
+[官網](https://git-scm.com/)
 
 ## 設定-git config
 
@@ -57,7 +57,7 @@ git init
 | del     | rm       | 刪除檔案 |
 | cls     |clear     | 清除畫面     |
 | cd      |pwd       | 列出目前路徑 |
--**
+
 
 ## Working、Staging & Repository
 
@@ -167,6 +167,7 @@ git checkout 分支名稱
 ``` bash
 git merge 分支名稱
 ```
+
 ## 標籤
 
 查詢標籤

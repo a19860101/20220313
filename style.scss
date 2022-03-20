@@ -1,0 +1,44 @@
+$bgColor: #098;
+
+body {
+    background-color: $bgColor;
+}
+a {
+    &:hover {
+        color: #000;
+    }
+    &:foucs {
+        color: #123;
+    }
+    &::after {
+        content: "";
+    }
+}
+
+@for $i from 1 through 12 {
+    .box-#{$i} {
+        width: 100% / 12 * $i
+    }
+}
+
+$colors: red green blue;
+@each $color in $colors {
+    .bg-#{$color} {
+        background-color: $color;
+    }
+}
+
+$breakpoints: (
+    'sm':600,
+    'md':960,
+    'lg':1200
+);
+
+@each $name,$width in $breakpoints {
+    .box-#{$name}{
+        width: $width * 1px;
+    }
+}
+
+
+
