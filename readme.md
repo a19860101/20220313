@@ -82,7 +82,7 @@ git commit -m "message"
 ```
 
 > -m 指的是message。在commit的時候一定要有-m，否則無法commit
-> 
+
 ## 紀錄
 
 Git 紀錄
@@ -166,4 +166,29 @@ git checkout 分支名稱
 
 ``` bash
 git merge 分支名稱
+```
+## 標籤
+
+查詢標籤
+
+```bash
+git tag
+```
+
+新增標籤
+
+```bash=
+git tag 標籤名稱
+```
+
+移除標籤
+
+```bash=
+git tag 標籤名稱 -d
+```
+
+上傳標籤
+
+```bash
+git push origin master --tags
 ```
