@@ -27,18 +27,28 @@ $colors: red green blue;
         background-color: $color;
     }
 }
-
+$cols : 12;
 $breakpoints: (
-    'sm':600,
-    'md':960,
-    'lg':1200
+    'sm':600px,
+    'md':960px,
+    'lg':1200px,
+    'xl':1600px
 );
 
 @each $name,$width in $breakpoints {
     .box-#{$name}{
-        width: $width * 1px;
+        width: $width;
     }
 }
 
+@each $name,$width in $breakpoints {
+    @media(min-width:$width ){
+        @for $i from 1 through $cols {
+            .col-#{$name}-#{$i} {
+                flex:0 0 100% / $cols * $i;
+            }
+        }
+    }
+}
 
 
