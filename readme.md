@@ -82,5 +82,88 @@ git commit -m "message"
 ```
 
 > -m 指的是message。在commit的時候一定要有-m，否則無法commit
+> 
+## 紀錄
 
-## git remote
+Git 紀錄
+
+```bash
+git log
+```
+
+Git紀錄用一行顯示
+
+```bash
+git log --oneline
+```
+
+查看所有紀錄
+
+```bash
+git reflog
+```
+
+or
+
+```bash
+git log -g
+```
+
+## 連線至遠端
+
+```bash
+git remote add origin 連線名稱
+```
+
+## 回到特定版本
+
+```bash
+git reset --hard 版本號
+```
+
+## 下載
+
+```bash
+git pull origin master
+```
+
+## 取得儲存庫
+
+```bash
+git clone 儲存庫位置
+```
+
+## 分支
+
+查詢分支
+
+```bash
+git branch
+
+git branch -a
+#近端與遠端
+```
+
+新增分支
+
+```bash
+git branch 分支名稱
+```
+
+移除分支
+
+```bash
+git branch 分支名稱 -d
+```
+
+切換分支
+
+```bash
+git checkout 分支名稱
+```
+
+合併分支
+
+``` bash
+git merge 分支名稱
+```
