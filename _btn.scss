@@ -1,9 +1,0 @@
-@use './var' as *;
-
-.btn {
-    display: inline-block;
-    background-color: #222;
-    color: $color;
-    padding: 15px 30px;
-    font-family: $text;
-}
