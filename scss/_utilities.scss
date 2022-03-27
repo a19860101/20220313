@@ -1,0 +1,12 @@
+@use './var';
+
+@each $display in var.$displays {
+    .#{$display}{
+        display: $display;
+    }
+}
+@each $position in var.$positions {
+    .#{$position}{
+        position: $position;
+    }
+}
