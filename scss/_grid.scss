@@ -6,7 +6,7 @@
 @each $name,$width in var.$breakpoints {
     @media(min-width:$width) {
         .container{
-            width: $width;
+            width: if($width==0,100%,$width);
             margin: auto;
         }
         @for $i from 1 through 12 {

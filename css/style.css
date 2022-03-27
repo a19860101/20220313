@@ -1,9 +1,9 @@
-@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;900&family=Roboto:wght@300;400;900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", "微軟正黑體";
+  font-family: "Roboto", "Noto Sans TC";
 }
 
 .row {
@@ -13,7 +13,7 @@
 
 @media (min-width: 0) {
   .container {
-    width: 0;
+    width: 100%;
     margin: auto;
   }
 
