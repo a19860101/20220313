@@ -1,1 +1,15 @@
 @use './var';
+
+@each $name,$width in var.$breakpoints {
+    @media(min-width:$width) {
+        .container{
+            width: $width;
+            margin: auto;
+        }
+        @for $i from 1 through 12 {
+            .col-#{$name}-#{$i} {
+                flex:0 0 100% / 12 * $i;
+            }
+        }
+    }
+}
