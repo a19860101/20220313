@@ -1,10 +1,23 @@
 @use './var';
-
-@each $display in var.$displays {
-    .#{$display}{
-        display: $display;
+@each $name,$width in var.$breakpoints {
+    @media(min-width: $width){
+        @each $display in var.$displays {
+            @if($name == 'xs'){
+                .#{$display}{
+                    display: $display;
+                }
+            }@else{
+                .#{$display}-#{$name}{
+                    display: $display;
+                }
+            }
+            // .#{$name}\:#{$display}{
+            //     display: $display;
+            // }
+        }
     }
 }
+
 @each $position in var.$positions {
     .#{$position}{
         position: $position;

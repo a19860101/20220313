@@ -424,34 +424,171 @@
   color: #fff;
 }
 
-.inline {
-  display: inline;
-}
+@media (min-width: 0) {
+  .none {
+    display: none;
+  }
 
-.inline-block {
-  display: inline-block;
-}
+  .inline {
+    display: inline;
+  }
 
-.block {
-  display: block;
-}
+  .inline-block {
+    display: inline-block;
+  }
 
-.flex {
-  display: flex;
-}
+  .block {
+    display: block;
+  }
 
-.table {
-  display: table;
-}
+  .flex {
+    display: flex;
+  }
 
-.table-cell {
-  display: table-cell;
-}
+  .table {
+    display: table;
+  }
 
-.flow-root {
-  display: flow-root;
-}
+  .table-cell {
+    display: table-cell;
+  }
 
+  .flow-root {
+    display: flow-root;
+  }
+}
+@media (min-width: 600px) {
+  .none-sm {
+    display: none;
+  }
+
+  .inline-sm {
+    display: inline;
+  }
+
+  .inline-block-sm {
+    display: inline-block;
+  }
+
+  .block-sm {
+    display: block;
+  }
+
+  .flex-sm {
+    display: flex;
+  }
+
+  .table-sm {
+    display: table;
+  }
+
+  .table-cell-sm {
+    display: table-cell;
+  }
+
+  .flow-root-sm {
+    display: flow-root;
+  }
+}
+@media (min-width: 1024px) {
+  .none-md {
+    display: none;
+  }
+
+  .inline-md {
+    display: inline;
+  }
+
+  .inline-block-md {
+    display: inline-block;
+  }
+
+  .block-md {
+    display: block;
+  }
+
+  .flex-md {
+    display: flex;
+  }
+
+  .table-md {
+    display: table;
+  }
+
+  .table-cell-md {
+    display: table-cell;
+  }
+
+  .flow-root-md {
+    display: flow-root;
+  }
+}
+@media (min-width: 1200px) {
+  .none-lg {
+    display: none;
+  }
+
+  .inline-lg {
+    display: inline;
+  }
+
+  .inline-block-lg {
+    display: inline-block;
+  }
+
+  .block-lg {
+    display: block;
+  }
+
+  .flex-lg {
+    display: flex;
+  }
+
+  .table-lg {
+    display: table;
+  }
+
+  .table-cell-lg {
+    display: table-cell;
+  }
+
+  .flow-root-lg {
+    display: flow-root;
+  }
+}
+@media (min-width: 1600px) {
+  .none-xl {
+    display: none;
+  }
+
+  .inline-xl {
+    display: inline;
+  }
+
+  .inline-block-xl {
+    display: inline-block;
+  }
+
+  .block-xl {
+    display: block;
+  }
+
+  .flex-xl {
+    display: flex;
+  }
+
+  .table-xl {
+    display: table;
+  }
+
+  .table-cell-xl {
+    display: table-cell;
+  }
+
+  .flow-root-xl {
+    display: flow-root;
+  }
+}
 .static {
   position: static;
 }
