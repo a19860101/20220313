@@ -31,3 +31,29 @@
         }
     }
 }
+@mixin xs {
+    @media(min-width:map-get(var.$breakpoints, xs)) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media(min-width:map-get(var.$breakpoints, sm)) {
+        @content;
+    }
+}
+@mixin md {
+    @media(min-width:map-get(var.$breakpoints, md)) {
+        @content;
+    }
+}
+@mixin lg {
+    @media(min-width:map-get(var.$breakpoints, lg)) {
+        @content;
+    }
+}
+@mixin xl {
+    @media(min-width:map-get(var.$breakpoints, xl)) {
+        @content;
+    }
+}

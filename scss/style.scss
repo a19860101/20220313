@@ -1,2 +1,12 @@
 @use './base';
-@use './grid';
+@use './grid' as *;
+
+body {
+    background-color: #098;
+    @include sm {
+        background-color: #765;
+    }
+    @include lg {
+        background-color: #890;
+    }
+}

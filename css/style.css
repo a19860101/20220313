@@ -365,4 +365,17 @@
     flex: 0 0 100%;
     padding: 15px;
   }
+}
+body {
+  background-color: #098;
+}
+@media (min-width: 600px) {
+  body {
+    background-color: #765;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    background-color: #890;
+  }
 }/*# sourceMappingURL=style.css.map */
