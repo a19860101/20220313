@@ -1,5 +1,8 @@
 @use './var';
-
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
 @each $name,$width in var.$breakpoints {
     @media(min-width:$width) {
         .container{
@@ -7,8 +10,16 @@
             margin: auto;
         }
         @for $i from 1 through 12 {
-            .col-#{$name}-#{$i} {
-                flex:0 0 100% / 12 * $i;
+            @if($name == 'xs'){
+                .col-#{$i} {
+                    flex:0 0 100% / 12 * $i;
+                    padding: 15px;
+                }
+            }@else{
+                .col-#{$name}-#{$i} {
+                    flex:0 0 100% / 12 * $i;
+                    padding: 15px;
+                }
             }
         }
     }
