@@ -9,6 +9,13 @@
             width: if($width==0,100%,$width);
             margin: auto;
         }
+        .container-#{$name}{
+            // width: 100%;
+            // max-width:$width;
+            width:min(100%,$width);
+            margin: auto;
+        }
+
         @for $i from 1 through 12 {
             @if($name == 'xs'){
                 .col-#{$i} {
