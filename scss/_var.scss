@@ -1,11 +1,17 @@
 $colors:(
-    red: #f00,
-    green: #0f0
+    red: #ff3838,
+    green: #2a9400,
+    blue:#0077ff,
+    orange:#ff9838,
+    dark:#181818,
+    light:#f3f3f3,
+    black:#000,
+    white:#fff,
 );
 $breakpoints:(
     xs: 0,
     sm: 600px,
-    md: 960px,
+    md: 1024px,
     lg: 1200px,
     xl: 1600px
 );
