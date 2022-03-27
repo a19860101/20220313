@@ -15,11 +15,29 @@
             //     display: $display;
             // }
         }
+        @each $position in var.$positions {
+            @if($name == 'xs'){
+                .#{$position}{
+                    position: $position;
+                }
+            }@else{
+                .#{$position}-#{$name}{
+                    position: $position;
+                }
+            }
+        }
+        @for $i from 0 through 10 {
+            .p-#{$i}{
+                padding: $i * 0.25rem;
+            }
+        }
+        @each $dir,$d in var.$directions {
+            @for $i from 0 through 10 {
+                .p#{$d}-#{$name}-#{$i}{
+                    padding-#{$dir}: $i * 0.25rem;
+                }
+            }
+        }
     }
 }
 
-@each $position in var.$positions {
-    .#{$position}{
-        position: $position;
-    }
-}
