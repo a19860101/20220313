@@ -76,3 +76,12 @@ $breakpoints: (
         }
     }
 }
+@mixin box($w,$h,$c) {
+    width: $w;
+    height: $h;
+    background-color: $c;
+}
+
+.box {
+    @include box(300px,250px,red);
+}
