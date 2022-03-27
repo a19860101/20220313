@@ -3,6 +3,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+[class^='container']{
+    margin: auto;
+}
 @each $name,$width in var.$breakpoints {
     @media(min-width:$width) {
         .container{
@@ -69,7 +72,4 @@
     .container-sm,.container-md,.container-lg,.container-xl {
         width:min(100%, map-get(var.$breakpoints, xl))
     }
-}
-[class^='container']{
-    margin: auto;
 }
