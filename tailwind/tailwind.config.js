@@ -2,7 +2,7 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     fontFamily:{
-      sans: ['PT sans','Noto Sans TC'],
+      sans: ['PT sans','lihsianti','Noto Sans TC'],
       serif: ['georgia'],
     } , 
     extend: {
