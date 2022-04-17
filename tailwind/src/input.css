@@ -3,22 +3,14 @@
 @tailwind utilities;
 
 @layer components{
-    .qwerty {
-        width: 100px;
-        height: 100px;
-        background-color: pink;
-    }
     .btn {
         @apply inline-block px-4 py-2 
     }
     .btn-blue {
-        @apply bg-blue-600 rounded-md hover:bg-blue-200 transition-colors duration-700 text-white hover:text-black
+        @apply bg-blue-600 rounded-md hover:bg-blue-500 transition-colors duration-700 
     }
     .btn-amber {
         @apply bg-amber-400 rounded-md hover:bg-amber-200 transition-colors duration-700
     }
 
-    .box {
-        @apply w-36 h-36 bg-zinc-800
-    }
 }
