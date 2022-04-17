@@ -42,7 +42,7 @@ html {
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: PT sans, lihsianti, Noto Sans TC;
+  font-family: PT sans, Noto Sans TC;
   /* 4 */
 }
 
@@ -472,9 +472,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 480px) {
   .container {
-    max-width: 640px;
+    max-width: 480px;
   }
 }
 
@@ -490,15 +490,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1440px) {
   .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
+    max-width: 1440px;
   }
 }
 
@@ -606,13 +600,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-family: georgia;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
+.text-5xl {
+  font-size: 3rem;
   line-height: 1;
 }
 
-.text-5xl {
-  font-size: 3rem;
+.text-6xl {
+  font-size: 3.75rem;
   line-height: 1;
 }
 
