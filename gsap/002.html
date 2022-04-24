@@ -11,15 +11,32 @@
 </head>
 <body>
     <div class="box w-32 h-32 bg-fuchsia-400"></div>
+    <div class="box-2 w-32 h-32 bg-amber-400"></div>
+    <div class="box-3 w-32 h-32 bg-slate-400"></div>
     <script>
+        gsap.defaults({
+            duration:1,
+            yoyo: true
+        });
         gsap.to('.box',{
             x: 600,
             rotate: 360,
-            duration: 1,
             delay: 0,
             repeat: -1,
-            yoyo: true
         });
+        gsap.to('.box-2',{
+            x: 400,
+            y: 200,
+            duration: 5,
+            delay:1,
+            repeat: 3,
+        })
+        gsap.to('.box-3',{
+            x: 100,
+            y: 600,
+            delay:2,
+            repeat: 2,
+        })
     </script>
 </body>
 </html>
