@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .box {
+            /* animation: a1 5s; */
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation-name: fade-out;
+            animation-duration: 2s;
+            animation-timing-function: ease;
+            /* ease, ease-in, ease-in-out, ease-out, linear, cubic-bezier */
+            animation-delay: 0s;
+            animation-iteration-count:1;
+            /* infinite */
+            animation-direction:normal;
+            /* normal, reverse ,alternate, alternate-reverse*/
+            animation-fill-mode: forwards;
+            /* backfards, forwards */
+        }
+        @keyframes fade-in {
+            /* from {} */
+            to {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+        }
+        @keyframes fade-out {
+            from {
+                opacity: 0;
+                transform: translateX(-50%);
+            }
+        }
+        /* 
+            from 進場動畫
+            to 出場動畫
+        */
+    </style>
+
+</head>
+<body>
+    <div class="box p-3 bg-teal-400 w-36 h-36"></div>    
+</body>
+</html>
