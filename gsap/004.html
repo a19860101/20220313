@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+</head>
+<body>
+    <div class="text-center w-[600px] mx-auto mt-36 p-5 bg-slate-300 rounded-lg outline outline-slate-400 outline-offset-4">
+        <h1 class="text-4xl mb-4">HELLO GSAP!!</h1>
+        <p class="mb-4">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore fuga itaque eaque distinctio omnis corrupti nobis aut? Nemo esse dignissimos ullam iste aut laudantium, similique sint illum sed error beatae!
+        </p>
+        <a href="#" class="inline-block px-5 py-2 bg-amber-500 rounded-lg ring-2 ring-offset-4 ring-amber-400 ring-offset-amber-100">link</a>
+    </div>
+    <script>
+        gsap.defaults({duration:.5});
+        let tl = gsap.timeline();
+        tl
+        .from('h1',{opacity:0,y:-30})
+        .from('p',{opacity:0,y:30})
+        .from('a',{opacity:0})
+    </script>
+</body>
+</html>
