@@ -11,20 +11,34 @@
 </head>
 <body>
     <nav class="text-center p-4">
-        <a href="#" class="start inline-block px-5 py-2 bg-amber-500 rounded-lg font-bold" >start</a>
+        <a href="#" class="play inline-block px-5 py-2 bg-amber-500 rounded-lg font-bold" >play</a>
         <a href="#" class="pause inline-block px-5 py-2 bg-amber-500 rounded-lg font-bold" >pause</a>
-        <a href="#" class="reset inline-block px-5 py-2 bg-amber-500 rounded-lg font-bold" >reset</a>
+        <a href="#" class="restart inline-block px-5 py-2 bg-amber-500 rounded-lg font-bold" >restart</a>
         <a href="#" class="reverse inline-block px-5 py-2 bg-amber-500 rounded-lg font-bold" >reverse</a>
     </nav>
     <div class="w-[80%] mx-auto bg-slate-200 p-24">
         <div class="box w-24 h-24 bg-pink-600"></div>
     </div>
     <script>
-        gsap.to('.box',{
+        let ani = gsap.to('.box',{
             x:600,
             rotate:360,
-            duration: 2
+            duration: 2,
+            paused: true
         })
+        document.querySelector('.play').onclick = ()=>{
+            ani.play();
+        }
+        document.querySelector('.pause').onclick = ()=>{
+            ani.pause();
+        }
+        document.querySelector('.restart').onclick = ()=>{
+            ani.restart();
+        }
+        document.querySelector('.reverse').onclick = ()=>{
+            ani.reverse();
+        }
+        
     </script>
 </body>
 </html>
