@@ -12,6 +12,7 @@
 <body>
     <div class="box w-36 h-36 bg-amber-400"></div>
     <div class="box-2 w-36 h-36 bg-teal-400"></div>
+    <div class="box-3 w-36 h-36 bg-sky-400"></div>
     <script>
         gsap.to('.box',{
             x: 500,
@@ -23,7 +24,25 @@
             y: 100,
             opacity: 0,
             duration: 5
-        })
+        });
+        gsap.fromTo('.box-3',{
+            x:300,
+            y:300,
+            scaleX:1,
+        },{
+            x:100,
+            y:100,
+            backgroundColor: 'red',
+            duration: 3
+        });
+        // 
+        /* 
+            x,y
+            scale,scaleX,scaleY,scaleZ
+            translate,translateX,translateY,translateZ
+            rotate,rotateX,rotateY,rotateZ
+            skew, skewX, skewY
+        */
     </script>
 </body>
 </html>
