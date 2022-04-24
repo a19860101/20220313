@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                qwerty: '#234',
+              }
+            }
+          }
+        }
+      </script>
+      <style type="text/tailwindcss">
+          .btn {
+              @apply bg-amber-400 inline-block p-4 rounded-lg text-slate-800;
+            }
+      </style>
+</head>
+<body>
+    <h1 class="text-6xl bg-qwerty text-white py-[100px] p-3">test</h1>
+    <a href="#" class="btn">asdf</a>
+
+</body>
+</html>
