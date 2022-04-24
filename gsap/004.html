@@ -18,12 +18,25 @@
         <a href="#" class="inline-block px-5 py-2 bg-amber-500 rounded-lg ring-2 ring-offset-4 ring-amber-400 ring-offset-amber-100">link</a>
     </div>
     <script>
-        gsap.defaults({duration:1});
-        let tl = gsap.timeline();
-        tl
-        .from('h1',{opacity:0,y:30})
-        .from('p',{opacity:0,y:30,duration:4})
-        .from('a',{opacity:0,y:30}, '<-.5')
+        gsap.defaults({duration:1,opacity:0});
+        // let tl = gsap.timeline();
+        // tl
+        // .from('h1',{opacity:0,y:30},2.5)
+        // .from('p',{opacity:0,y:30,duration:4},3)
+        // .from('a',{opacity:0,y:30}, 1)
+
+        gsap.timeline()
+        .from('h1',{y:-100})
+        .from('p',{y:100})
+        .from('a',{x:-100})
+        /* 
+            +=,-= 以原始位置往後(+=)或往前(-=)設定秒數
+            < 回到上一個動畫的開頭播放
+            <1 回到上一個動畫的開頭並往後一秒播放
+            <-1 回到上一個動畫的開頭並往前一秒播放
+            Number 從Number秒開始播放
+               
+        */
     </script>
 </body>
 </html>

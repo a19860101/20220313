@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+</head>
+<body>
+    <nav class="text-center p-4">
+        <a href="#" class="start inline-block px-5 py-2 bg-amber-500 rounded-lg font-bold" >start</a>
+        <a href="#" class="pause inline-block px-5 py-2 bg-amber-500 rounded-lg font-bold" >pause</a>
+        <a href="#" class="reset inline-block px-5 py-2 bg-amber-500 rounded-lg font-bold" >reset</a>
+        <a href="#" class="reverse inline-block px-5 py-2 bg-amber-500 rounded-lg font-bold" >reverse</a>
+    </nav>
+    <div class="w-[80%] mx-auto bg-slate-200 p-24">
+        <div class="box w-24 h-24 bg-pink-600"></div>
+    </div>
+    <script>
+        gsap.to('.box',{
+            x:600,
+            rotate:360,
+            duration: 2
+        })
+    </script>
+</body>
+</html>
