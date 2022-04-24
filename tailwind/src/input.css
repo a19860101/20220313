@@ -12,5 +12,10 @@
     .btn-amber {
         @apply bg-amber-400 rounded-md hover:bg-amber-200 transition-colors duration-700
     }
+    .link {
+        @apply inline-block border-2 border-slate-800 bg-slate-300 px-4 py-1 rounded-lg
+                hover:ring-4 ring-sky-400 ring-offset-4 ring-offset-cyan-200
+                transition-all
+    }
 
 }
