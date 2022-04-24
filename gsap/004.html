@@ -18,12 +18,12 @@
         <a href="#" class="inline-block px-5 py-2 bg-amber-500 rounded-lg ring-2 ring-offset-4 ring-amber-400 ring-offset-amber-100">link</a>
     </div>
     <script>
-        gsap.defaults({duration:.5});
+        gsap.defaults({duration:1});
         let tl = gsap.timeline();
         tl
-        .from('h1',{opacity:0,y:-30})
-        .from('p',{opacity:0,y:30})
-        .from('a',{opacity:0})
+        .from('h1',{opacity:0,y:30})
+        .from('p',{opacity:0,y:30}, '-=.5')
+        .from('a',{opacity:0,y:30}, '-=.5')
     </script>
 </body>
 </html>
