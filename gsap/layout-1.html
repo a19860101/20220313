@@ -10,17 +10,32 @@
 
 </head>
 <body class="bg-rose-200 h-screen">
-    <div class="w-[60%] h-min flex items-center bg-slate-300 inset-0 m-auto absolute">
+    <div class="overlay w-full h-screen bg-rose-800 z-40 fixed origin-right"></div>
+    <div class="g1 w-[60%] h-min flex items-center bg-slate-300 inset-0 m-auto absolute">
         <div class="w-1/2">
-            <img src="https://picsum.photos/id/42/800" class="w-full">
+            <img src="https://picsum.photos/id/42/800" class="g2 w-full">
         </div>
         <div class="w-1/2 pl-5">
-            <h2 class="text-3xl">HELLO</h2>
-            <p class="my-4">
+            <h2 class="g3 text-3xl">HELLO</h2>
+            <p class="g4 my-4">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo id facilis, sint minus maxime velit eligendi debitis nostrum cupiditate rem perspiciatis voluptatem quaerat laudantium.
             </p>
-            <a href="#" class=" inline-block px-5 py-2 bg-amber-500 rounded-lg font-bold">More</a>
+            <a href="#" class="g5 inline-block px-5 py-2 bg-amber-500 rounded-lg font-bold">More</a>
         </div>
     </div>
+    <script>
+        gsap.defaults({duration: 1, opacity:0})
+        gsap.to('.overlay',{
+            // x: '100%',
+            scaleX: 0,
+            delay: .5
+        })
+        // gsap.timeline()
+        //     .from('.g1',{scaleY:0})
+        //     .from('.g2',{x:-100})
+        //     .from('.g3',{y:50},'-=.5')
+        //     .from('.g4',{y:50},'-=.5')
+        //     .from('.g5',{y:50},'-=.5')
+    </script>
 </body>
 </html>
