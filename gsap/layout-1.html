@@ -10,7 +10,11 @@
 
 </head>
 <body class="bg-rose-200 h-screen">
-    <div class="overlay w-full h-screen bg-rose-800 z-40 fixed origin-right"></div>
+    <div class="play_bg fixed z-50 grid place-content-center h-screen w-full">
+        <a href="#" class="go inline-block py-2 px-4 bg-yellow-200 rounded-full">GO!!!</a>
+    </div>
+    <div class="overlay w-full h-screen bg-rose-800 z-40 fixed origin-right">
+    </div>
     <div class="g1 w-[60%] h-min flex items-center bg-slate-300 inset-0 m-auto absolute">
         <div class="w-1/2">
             <img src="https://picsum.photos/id/42/800" class="g2 w-full">
@@ -25,17 +29,22 @@
     </div>
     <script>
         gsap.defaults({duration: 1, opacity:0})
-        gsap.to('.overlay',{
-            // x: '100%',
-            scaleX: 0,
-            delay: .5
-        })
-        // gsap.timeline()
-        //     .from('.g1',{scaleY:0})
-        //     .from('.g2',{x:-100})
-        //     .from('.g3',{y:50},'-=.5')
-        //     .from('.g4',{y:50},'-=.5')
-        //     .from('.g5',{y:50},'-=.5')
+        let intro = gsap.timeline()
+            .to('.overlay',{
+                // x: '100%',
+                scaleX: 0,
+                skewX: 90
+            })
+            .from('.g1',{scaleY:0})
+            .from('.g2',{x:-100})
+            .from('.g3',{y:50},'-=.5')
+            .from('.g4',{y:50},'-=.5')
+            .from('.g5',{y:50},'-=.5')
+        intro.pause();
+        document.querySelector('.go').onclick = () => {
+            intro.play();
+            document.querySelector('.play_bg').style.display = 'none';
+        }
     </script>
 </body>
 </html>
