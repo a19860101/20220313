@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI';
+        }
+        header {
+            height: 100vh;
+            width: 100%;
+            background-image: url('https://picsum.photos/id/43/1600/1000');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .container {
+            width: 100%;
+            padding-inline: 10%;
+            /* padding-inline:;
+            padding-inline-start:;
+            padding-inline-end:;
+            padding-block:;
+            padding-block-start:;
+            padding-block-end:; */
+        }
+        .container:nth-of-type(even){
+            background-color: #ccc;
+
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        .box {
+            flex: 1 0 0 ;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            gsap.defaults({duration:1})
+            gsap.from('.box',{
+                scale:0,
+                opacity: 0,
+                stagger:{
+                    amount:2
+                },
+                scrollTrigger:{
+                    trigger: '.row',
+                    markers: true,
+                    start: '40% 50%',
+                    end: '60% 50%',
+                    toggleActions: 'play none none reset'
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <header></header>    
+    <div class="container">
+        <div class="row">
+            <div class="box">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ut atque harum rem praesentium nam tempore corrupti earum excepturi? Explicabo quaerat, quasi sed expedita architecto quisquam incidunt hic! Quisquam, et!
+                </p>
+            </div>
+            <div class="box">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ut atque harum rem praesentium nam tempore corrupti earum excepturi? Explicabo quaerat, quasi sed expedita architecto quisquam incidunt hic! Quisquam, et!
+                </p>
+            </div>
+            <div class="box">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ut atque harum rem praesentium nam tempore corrupti earum excepturi? Explicabo quaerat, quasi sed expedita architecto quisquam incidunt hic! Quisquam, et!
+                </p>
+            </div>
+            <div class="box">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ut atque harum rem praesentium nam tempore corrupti earum excepturi? Explicabo quaerat, quasi sed expedita architecto quisquam incidunt hic! Quisquam, et!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="box">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ut atque harum rem praesentium nam tempore corrupti earum excepturi? Explicabo quaerat, quasi sed expedita architecto quisquam incidunt hic! Quisquam, et!
+                </p>
+            </div>
+            <div class="box">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ut atque harum rem praesentium nam tempore corrupti earum excepturi? Explicabo quaerat, quasi sed expedita architecto quisquam incidunt hic! Quisquam, et!
+                </p>
+            </div>
+            <div class="box">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ut atque harum rem praesentium nam tempore corrupti earum excepturi? Explicabo quaerat, quasi sed expedita architecto quisquam incidunt hic! Quisquam, et!
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
