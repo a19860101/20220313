@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI';
+            box-sizing: border-box;
+        }
+        section {
+            width: 100%;
+            height: 100vh;
+        }
+        .one {background-color: #ffce6d;}
+        .two {
+            background-color: #c3f567;
+            display: grid;
+            place-content: center;
+        }
+        .three {background-color: #74c5f8;}
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: #222;
+        }
+    </style>
+</head>
+<body>
+    <section class="one"></section>
+    <section class="two">
+        <div class="box"></div>
+    </section>
+    <section class="three"></section>
+    <script>
+        gsap.from('.box',{
+            duration:3,
+            opacity:0,
+            x:-300,
+            scrollTrigger: {
+                trigger:'.box',
+                markers: true
+            }
+        })
+    </script>
+</body>
+</html>
