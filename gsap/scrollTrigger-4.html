@@ -53,9 +53,9 @@
     <script>
         gsap.defaults({duration:1});
         let textAni = gsap.timeline()
-        .from('.first-text',{opacity:0,scale:3,stagger:1})
-        // .to('.first-text',{rotate:360,stagger:1})
-        .to('.first-text',{opacity:0,scale:0,stagger:1},'<+1')
+        .from('.first-text',{opacity:0,scale:0,stagger:1})
+        // .to('.first-text',{rotate:180,stagger:1},'<+1')
+        .to('.first-text',{opacity:0,rotate:180,scale:3,stagger:1},'<+1')
 
         ScrollTrigger.create({
             trigger:'.first',
