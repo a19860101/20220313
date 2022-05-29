@@ -46,8 +46,15 @@
             scrollTrigger: {
                 trigger:'.box',
                 markers: true,
-                start:'50% 80%',
-                end: '50% 20%',
+                start:'top 80%',
+                end: 'bottom 30%',
+                toggleActions: 'play complete reverse reset'
+                // toggleActions: onEnter onLeave onEnterBack onLeaveBack
+                // play, pause, resume, reset, restart, complete, reverse, none
+                // onEnter(看綠色): scroller-start向下進入到start
+                // onLeave(看綠色): scroller-end 向下離開 end
+                // onEnterBack(看紅色): scroller-end 向上進入 end
+                // onLeaveBack(看紅色): scroller-start 向上離開 start
             }
         })
     </script>
