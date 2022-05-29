@@ -12,12 +12,28 @@
     <h1 class="title"></h1>
     
     <script>
-        gsap.to('.title',{
-            text:'Lorem ipsum dolor sit amet.',
-            duration:2,
-            ease:'none',
-            repeat:1,
+        gsap.defaults({duration:2,ease:'none'});
+        // gsap.from('.title',{
+            // text:'Lorem ipsum dolor sit amet.',
+            // duration:2,
+            // ease:'none',
+            // repeat:1,
+            // yoyo: true
+        // })
+        gsap.timeline()
+        .to('.title',{
+            text: 'HELLO',
+            repeat: 1,
             yoyo: true
+        })
+        .to('.title',{
+            text: 'WORLD',
+            repeat: 1,
+            yoyo: true
+        })
+        .to('.title',{
+            text:'12345',
+            
         })
     </script>
 </body>
