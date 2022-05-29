@@ -10,6 +10,10 @@
 </head>
 <body>
     <h1 class="title"></h1>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
     
     <script>
         gsap.defaults({duration:2,ease:'none'});
@@ -20,21 +24,26 @@
             // repeat:1,
             // yoyo: true
         // })
+        // gsap.timeline()
+        // .to('.title',{
+        //     text: 'HELLO',
+        //     repeat: 1,
+        //     yoyo: true
+        // })
+        // .to('.title',{
+        //     text: 'WORLD',
+        //     repeat: 1,
+        //     yoyo: true
+        // })
+        // .to('.title',{
+        //     text:'12345',
+
+        // })
         gsap.timeline()
-        .to('.title',{
-            text: 'HELLO',
-            repeat: 1,
-            yoyo: true
-        })
-        .to('.title',{
-            text: 'WORLD',
-            repeat: 1,
-            yoyo: true
-        })
-        .to('.title',{
-            text:'12345',
-            
-        })
+        .to('.one',{text:'如果可以'})
+        .to('.two',{text:'我想和妳'})
+        .to('.three',{text:'回到那天相遇'})
+        .to('.four',{text:'讓時間停止 那一場雨',duration:3})
     </script>
 </body>
 </html>
