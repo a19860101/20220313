@@ -30,10 +30,10 @@
             font-size: 4rem;
             position: absolute;
         }
-        .box:nth-of-type(1){background-color: #37E2D5;z-index: 4;}
-        .box:nth-of-type(2){background-color: #590696;z-index: 3;}
-        .box:nth-of-type(3){background-color: #C70A80;z-index: 2;}
-        .box:nth-of-type(4){background-color: #FBCB0A;z-index: 1;}
+        .box:nth-of-type(1){background-color: #37E2D5;}
+        .box:nth-of-type(2){background-color: #590696;}
+        .box:nth-of-type(3){background-color: #C70A80;}
+        .box:nth-of-type(4){background-color: #FBCB0A;}
     </style>
 </head>
 <body>
@@ -62,6 +62,19 @@
                 // markers: true,
             }
         })
+        gsap.set('.box',{
+            zIndex: (i, target, targets)=>targets.length - i
+            // zIndex: function(i, target, targets){
+            //     console.log(targets);
+            //     return targets.length - i;
+            // }
+        })
+        //原生js
+        // let box = [...document.querySelectorAll('.box')];
+        // let box = Array.from(document.querySelectorAll('.box'));
+        // box.forEach((data,i)=>{
+        //     data.style.zIndex = box.length - i;
+        // })
     </script>
 </body>
 </html>
