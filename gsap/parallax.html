@@ -38,7 +38,7 @@
         .pImg {
             position: absolute;
             right: 10%;
-            top: 0;
+            top: 10%;
         }
     </style>
 </head>
@@ -57,7 +57,7 @@
     </section>
     <script>
         gsap.from('.content',{
-            y:-50,
+            y:50,
             ease:'none',
             scrollTrigger: {
                 trigger: '.content',
@@ -65,8 +65,8 @@
             }
         })
         gsap.from('.pImg',{
-            y:10,
-            scale: .5,
+            y:-10,
+            // scale: .5,
             ease:'none',
             scrollTrigger: {
                 trigger: '.pImg',

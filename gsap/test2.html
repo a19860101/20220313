@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+    <style>
+        * {margin: 0;padding: 0;box-sizing: border-box;}
+        header {
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://picsum.photos/id/23/1600/800');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        img {
+            width: 100%;
+        }
+        .container {
+            width: 1200px;
+            margin: auto;
+
+            padding-block: 200px;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .row:nth-child(odd) .col-6:nth-child(1){
+            order:2
+        }
+        .row:nth-child(odd) .col-6:nth-child(2){
+            order:1
+        }
+        .col-6 {
+            flex: 0 0 50%;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header></header>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <img src="https://picsum.photos/id/98/600" alt="">
+            </div>
+            <div class="col-6">
+                <h2>title 1 </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio minima incidunt praesentium, asperiores, eum suscipit eos ipsam commodi fuga autem cum sequi, illum fugiat rem modi excepturi molestias. Neque, ut.</p>
+                <a href="#">link</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <img src="https://picsum.photos/id/38/600" alt="">
+            </div>
+            <div class="col-6">
+                <h2>title 2 </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio minima incidunt praesentium, asperiores, eum suscipit eos ipsam commodi fuga autem cum sequi, illum fugiat rem modi excepturi molestias. Neque, ut.</p>
+                <a href="#">link</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <img src="https://picsum.photos/id/92/600" alt="">
+            </div>
+            <div class="col-6">
+                <h2>title 3 </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio minima incidunt praesentium, asperiores, eum suscipit eos ipsam commodi fuga autem cum sequi, illum fugiat rem modi excepturi molestias. Neque, ut.</p>
+                <a href="#">link</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <img src="https://picsum.photos/id/91/600" alt="">
+            </div>
+            <div class="col-6">
+                <h2>title 4 </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio minima incidunt praesentium, asperiores, eum suscipit eos ipsam commodi fuga autem cum sequi, illum fugiat rem modi excepturi molestias. Neque, ut.</p>
+                <a href="#">link</a>
+            </div>
+        </div>
+       
+    </div>
+    <script>
+        const sections = gsap.utils.toArray(".row")
+
+        sections.forEach((element, index) => {
+        let items = element.querySelectorAll(".col-6")
+        let distance = (index %2 == 0) ? -100 : 100
+        let tl = gsap.timeline({
+            scrollTrigger:{
+            trigger:element,
+            start:"top 80%",
+            toggleActions:"restart none none reverse",
+            }
+        })
+        
+        // tl.from(items, {duration:1, xPercent:gsap.utils.wrap([-distance, distance])})
+        tl.from(items, {duration:1, xPercent:distance,opacity:0})
+        // tl.from(items, {opacity:0, duration:0.3}, 0)  
+        })
+        
+        
+    </script>
+</body>
+</html>

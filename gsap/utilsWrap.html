@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        .box {
+            margin: 10px auto;
+            width: 150px;
+            height: 150px;
+            background-color: #098;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>    
+    <script>
+        gsap.from('.box',{
+            autoAlpha:0,
+            x:gsap.utils.wrap([100,-100]),
+            duration:.4,
+            rotate: gsap.utils.wrap([90,-90]),
+            delay:.3,
+            stagger:{
+                each:.4
+            }    
+        })
+    </script>
+</body>
+</html>
