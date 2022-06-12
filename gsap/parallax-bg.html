@@ -59,11 +59,32 @@
         // let test = gsap.utils.toArray('section');
         // let test = [...document.querySelectorAll('section')];
 
+        console.log(innerHeight);
+        console.log(innerWidth);
+
         gsap.utils.toArray('section').forEach((section,i)=>{
             section.bg = section.querySelector('.bg');
             console.log(section.bg)
             section.bg.style.backgroundImage = `url('https://picsum.photos/1440/900?random=${i}')`
 
+            section.bg.style.backgroundPosition = `50% ${-innerHeight / 2}px`;
+            gsap.to(section.bg,{
+                backgroundPosition: `50% ${innerHeight / 2}px`,
+                ease: 'none',
+                scrollTrigger:{
+                    trigger: section,
+                    scrub: true
+                }
+            })
+            // section.bg.style.backgroundPosition = `50% -100px`;
+            // gsap.to(section.bg,{
+            //     backgroundPosition: `50% 100px`,
+            //     ease: 'none',
+            //     scrollTrigger:{
+            //         trigger: section,
+            //         scrub: true
+            //     }
+            // })
         })
     </script>
 </body>
