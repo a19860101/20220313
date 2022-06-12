@@ -24,6 +24,9 @@
             left: 0;
             width: 100%;
             height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
         }   
         /* img {
             width: 100%;
@@ -51,5 +54,17 @@
     <section>
         <div class="bg"></div>
     </section>
+    <script>
+
+        // let test = gsap.utils.toArray('section');
+        // let test = [...document.querySelectorAll('section')];
+
+        gsap.utils.toArray('section').forEach((section,i)=>{
+            section.bg = section.querySelector('.bg');
+            console.log(section.bg)
+            section.bg.style.backgroundImage = `url('https://picsum.photos/1440/900?random=${i}')`
+
+        })
+    </script>
 </body>
 </html>
