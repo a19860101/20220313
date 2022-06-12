@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-content: center;
+        }
+        h2 {
+            position: relative;
+            font-size: 5rem;
+            text-shadow: 2px 2px 1px rgb(0 0 0 /.5);
+            font-family: 'Segoe UI';
+            color: #fff;
+        }
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }   
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="bg"><img src="https://picsum.photos/id/45/1600/1000"></div>
+        <h2>ONE</h2>
+    </section>
+    <section>
+        <div class="bg"><img src="https://picsum.photos/id/46/1600/1000"></div>
+        <h2>TWO</h2>
+    </section>
+    <section>
+        <div class="bg"><img src="https://picsum.photos/id/47/1600/1000"></div>
+        <h2>THREE</h2>
+    </section>
+    <section>
+        <div class="bg"><img src="https://picsum.photos/id/48/1600/1000"></div>
+        <h2>FOUR</h2>
+    </section>
+    <section>
+        <div class="bg"><img src="https://picsum.photos/id/49/1600/1000"></div>
+        <h2>FIVE</h2>
+    </section>
+    <script>
+
+        // let test = gsap.utils.toArray('section');
+        let els = [...document.querySelectorAll('section')];
+
+        els.forEach((section,i)=>{
+            bg = section.querySelector('img');
+
+            bg.style.objectPosition = `50% ${-innerHeight / 2}px`;
+
+            gsap.to(bg,{
+                objectPosition: `50% ${innerHeight / 2}px`,
+                ease: 'none',
+                scrollTrigger:{
+                    trigger: section,
+                    scrub: true
+                }
+            })
+            // section.bg.style.backgroundPosition = `50% -100px`;
+            // gsap.to(section.bg,{
+            //     backgroundPosition: `50% 100px`,
+            //     ease: 'none',
+            //     scrollTrigger:{
+            //         trigger: section,
+            //         scrub: true
+            //     }
+            // })
+        })
+    </script>
+</body>
+</html>
