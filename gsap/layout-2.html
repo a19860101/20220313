@@ -104,7 +104,21 @@
         const row = gsap.utils.toArray('.row');
         // const row = [...document.querySelectorAll('.row')];
 
-        console.log(row);
+        row.forEach((el,i) => {
+            console.log(el);
+            let items = el.querySelectorAll('.col-6');
+            let distance = (i % 2 == 0) ? 100 : -100;
+            console.log(distance);
+            let tl = gsap.timeline({
+                scrollTrigger:{
+                    trigger:el,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reset'
+                }
+            })
+            tl.from(items,{duration: 3,xPercent:distance})
+        })
+        
     </script>
 </body>
 </html>
