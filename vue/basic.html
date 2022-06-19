@@ -15,6 +15,7 @@
 <body>
     <div id="banana">
         <h1 :class="h1Class">{{msg}}</h1>
+        <h2 :style="{color: textRed}">hello</h2>
         <button v-on:click="test">click</button>
         <button @click="test">click</button>
         <div>{{count > 100 ? '名額已滿': '尚有名額'}}</div>
@@ -27,7 +28,8 @@
                     msg : 'hello VUE!!',
                     count: 100,
                     h1Class: 'title',
-                    img: 'https://picsum.photos/id/23/200'
+                    img: 'https://picsum.photos/id/23/200',
+                    textRed: 'red'
                 }
             },
             methods:{
