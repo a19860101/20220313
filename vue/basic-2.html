@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="message">
+        <div>
+            <input type="radio" name="gender" v-model="gender" value="男">
+            <input type="radio" name="gender" v-model="gender" value="女">
+            {{gender}}
+        </div>
+        <div>
+            <input type="checkbox" v-model="skill" value="平面">
+            <input type="checkbox" v-model="skill" value="網頁">
+            <input type="checkbox" v-model="skill" value="動畫">
+            {{skill}}
+        </div>
+
+        <div>
+            {{message}}
+        </div>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    message:'',
+                    gender: '女',
+                    skill: ['網頁','動畫']
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
