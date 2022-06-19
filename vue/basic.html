@@ -15,6 +15,8 @@
 <body>
     <div id="banana">
         <h1 :class="h1Class">{{msg}}</h1>
+        <button v-on:click="test">click</button>
+        <button @click="test">click</button>
         <div>{{count > 100 ? '名額已滿': '尚有名額'}}</div>
         <img :src="img" alt="">
     </div>
@@ -26,6 +28,11 @@
                     count: 100,
                     h1Class: 'title',
                     img: 'https://picsum.photos/id/23/200'
+                }
+            },
+            methods:{
+                test(){
+                    alert('hello vue!!!');
                 }
             }
         }).mount('#banana');
