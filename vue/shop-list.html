@@ -113,9 +113,8 @@
                     // console.log(this.products[idx])
                 },
                 removeCart(idx){
-                    // this.carts.splice(idx,1);
-                    let q = this.carts.filter(data => data );
-                    console.log(q);
+                    this.carts.splice(idx,1);
+                    // this.carts = this.carts.filter((data,i) => i != idx);
                     return false;
                 }
             }
