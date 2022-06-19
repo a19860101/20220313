@@ -21,7 +21,14 @@
             <input type="checkbox" v-model="skill" value="動畫">
             {{skill}}
         </div>
-
+        <div>
+            {{lists}}
+        </div>
+        <div>
+            <div v-for="(list,idx) in lists">
+                {{list.name}} --{{list.price}}元
+            </div>
+        </div>
         <div>
             {{message}}
         </div>
@@ -32,7 +39,13 @@
                 return {
                     message:'',
                     gender: '女',
-                    skill: ['網頁','動畫']
+                    skill: ['網頁','動畫'],
+                    lists: [
+                        {name:'肉鬆但',price:25},
+                        {name:'火腿蛋',price:30},
+                        {name:'培根蛋',price:35}
+                    ],
+                    
                 }
             }
         }).mount('#app');
