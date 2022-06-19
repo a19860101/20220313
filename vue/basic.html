@@ -10,12 +10,20 @@
         .title {
             color: #f00;
         }
+        .text-red {
+            color: red;
+        }
+        .text-blue {
+            color: blue;
+        }
     </style>
 </head>
 <body>
     <div id="banana">
         <h1 :class="h1Class">{{msg}}</h1>
+        <h1 :class="active ? 'text-blue':'text-red'">HELLO</h1>
         <h2 :style="{color: textRed}">hello</h2>
+        <button @click="toggle">toggle </button>
         <button v-on:click="test">click</button>
         <button @click="test">click</button>
         <div>{{count > 100 ? '名額已滿': '尚有名額'}}</div>
@@ -27,14 +35,19 @@
                 return {
                     msg : 'hello VUE!!',
                     count: 100,
-                    h1Class: 'title',
+                    h1Class: '',
                     img: 'https://picsum.photos/id/23/200',
-                    textRed: 'red'
+                    textRed: 'red',
+                    active: true
                 }
             },
             methods:{
                 test(){
                     alert('hello vue!!!');
+                },
+                toggle(){
+                    this.active = !this.active
+                    console.log(this.active);
                 }
             }
         }).mount('#banana');
