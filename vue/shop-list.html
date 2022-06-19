@@ -11,10 +11,18 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        .product-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
 </head>
 
 <body id="app">
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-sm bg-light mb-5">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -39,12 +47,31 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-4" v-for="product in products">
+                <div class="border rounded-3">
+                    <img :src="product.cover" class="product-img p-4">
+                    <div class="px-3 py-5">
+                        <h3>{{product.title}}</h3>
+                        <div>
+                            {{product.price}}
+                        </div>
+                        <a href="#" class="btn btn-primary">加入購物車</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         Vue.createApp({
             data(){
                 return {
                     products:[
-                        {id:1,title:'',cover:'',price:'',sale:''}
+                        {id:1,title:'MacBook Air M1晶片',cover:'https://www.apple.com/tw/macbook-air/images/overview/hero_mba_m1__mfge6fbp7t2m_large.jpg',price:'30900',sale:''},
+                        {id:2,title:'MacBook Air M2晶片',cover:'https://www.apple.com/tw/macbook-air/images/overview/hero_mba_m2__ejbs627dj7ee_large.jpg',price:'37900',sale:''},
+                        {id:3,title:'MacBook Pro 13 吋',cover:'https://www.apple.com/tw/macbook-pro/images/overview/hero_13__d1tfa5zby7e6_large.jpg',price:'39900',sale:''},
+                        {id:4,title:'Mac Mini',cover:'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mac-mini-hero-202011?wid=452&hei=420&fmt=jpeg&qlt=95&.v=1603403462000',price:'21900',sale:''},
                     ]
                 }
             }
