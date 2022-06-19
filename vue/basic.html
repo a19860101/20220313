@@ -6,21 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        .title {
+            color: #f00;
+        }
+    </style>
 </head>
 <body>
     <div id="banana">
-        <h1>{{msg}}</h1>
-        <div>{{count}}</div>
+        <h1 :class="h1Class">{{msg}}</h1>
+        <div>{{count > 100 ? '名額已滿': '尚有名額'}}</div>
+        <img :src="img" alt="">
     </div>
     <script>
         Vue.createApp({
-            data:function(){
+            data(){
                 return {
                     msg : 'hello VUE!!',
-                    count: 100
+                    count: 100,
+                    h1Class: 'title',
+                    img: 'https://picsum.photos/id/23/200'
                 }
             }
         }).mount('#banana');
+
     </script>
 </body>
 </html>
