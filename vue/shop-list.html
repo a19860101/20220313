@@ -81,12 +81,12 @@
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div v-for="cart in carts" class="d-flex align-items-center border-bottom pb-3 mb-4">
+            <div v-for="(cart,idx) in carts" class="d-flex align-items-center border-bottom pb-3 mb-4">
                 <img :src="cart.cover" alt="" style="width:100px">
                 <div class=" pb-3">
                     <h5>{{cart.title}}</h5>
                     <div>{{cart.price}}</div>
-                    <a href="" class="btn btn-outline-danger btn-sm">移除</a>
+                    <a href="#" class="btn btn-outline-danger btn-sm" @click="removeCart(idx)">移除</a>
                 </div>
             </div>
         </div>
@@ -111,6 +111,12 @@
                 addCart(idx){
                     this.carts.push(this.products[idx]);
                     // console.log(this.products[idx])
+                },
+                removeCart(idx){
+                    // this.carts.splice(idx,1);
+                    let q = this.carts.filter(data => data );
+                    console.log(q);
+                    return false;
                 }
             }
         }).mount('#app')
