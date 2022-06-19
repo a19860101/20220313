@@ -12,12 +12,36 @@
         <section>
             <h1>代辦項目</h1>
             <ul>
-                <li v-for="list in lists">
+                <li v-for="list in lists.filter(data=>!data.isComplete)">
                     <input type="checkbox" :id="list.name" v-model="list.isComplete">
                     <label :for="list.name">
                         {{list.name}}
                     </label>
                 </li>
+            </ul>
+        </section>
+        <section>
+            <h1>已完成</h1>
+            <ul>
+                <li v-for="list in lists.filter(data=>data.isComplete)">
+                    <input type="checkbox" :id="list.name" v-model="list.isComplete">
+                    <label :for="list.name">
+                        {{list.name}}
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h1>已完成(v-if)</h1>
+            <ul>
+                <template v-for="list in lists">
+                    <li v-if="list.isComplete">
+                        <input type="checkbox" :id="list.name" v-model="list.isComplete">
+                        <label :for="list.name">
+                            {{list.name}}
+                        </label>
+                    </li>
+                </template>
             </ul>
         </section>
         <pre>
