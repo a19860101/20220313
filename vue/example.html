@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="app">
-        <section>
+        <section v-show="lists.filter(data=>!data.isComplete).length">
             <h1>代辦項目</h1>
             <ul>
                 <li v-for="list in lists.filter(data=>!data.isComplete)" :key="list.id">
@@ -20,7 +20,7 @@
                 </li>
             </ul>
         </section>
-        <section>
+        <section v-show="lists.filter(data=>data.isComplete).length">
             <h1>已完成</h1>
             <ul>
                 <li v-for="list in lists.filter(data=>data.isComplete)" :key="list.id">
@@ -31,7 +31,7 @@
                 </li>
             </ul>
         </section>
-        <section>
+        <!-- <section>
             <h1>已完成(v-if)</h1>
             <ul>
                 <template v-for="list in lists"  :key="list.id">
@@ -43,12 +43,12 @@
                     </li>
                 </template>
             </ul>
-        </section>
-        <pre>
+        </section> -->
+        <!-- <pre>
             {{
                 lists   
             }}
-        </pre>
+        </pre> -->
     </div>
     <script>
         Vue.createApp({
