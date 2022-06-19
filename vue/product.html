@@ -34,7 +34,7 @@
     <div class="container" id="app">
         <div class="row">
             <div class="col-6">
-                <img :src="`images/${currentImg}`" alt="">
+                <img :src="`images/${current.cover}`" alt="">
                 <div class="thumbs">
                     <div v-for="(v,idx) in variants">
                         <img :src="`images/${v.cover}`" @click="selectedIndex(idx)">
@@ -42,11 +42,15 @@
                 </div>
             </div>
             <div class="col-6">
-                <h2>{{title}}</h2>
+                <h2
+                    :style="{color:current.hex}"    
+                >{{title}} {{current.color}}</h2>
                 <div>
                     {{desc}}
                 </div>
-                <a href="#">加入購物車</a>
+
+                <button v-show="current.qty">加入購物車</button>
+                <button disabled v-show="!current.qty">補貨中</button>
             </div>
         </div>
     </div>
@@ -57,11 +61,11 @@
                     title:'iPhone 13',
                     desc: '以 iPhone 8 或後續機型換購，獲享最高達 NT$3,000 – NT$19,500 折抵優惠**',
                     variants:[
-                        {id:1,title:'iPhone13',cover:'iphone-13-green-select.png',color:'綠色',hex:'#123',price:'25900',qty:3},
-                        {id:2,title:'iPhone13',cover:'iphone-13-blue-select-2021.png',color:'藍色',hex:'#123',price:'25900',qty:0},
-                        {id:3,title:'iPhone13',cover:'iphone-13-midnight-select-2021.png',color:'午夜色',hex:'#123',price:'25900',qty:12},
-                        {id:4,title:'iPhone13',cover:'iphone-13-starlight-select-2021.png',color:'星光色',hex:'#123',price:'25900',qty:1},
-                        {id:5,title:'iPhone13',cover:'iphone-13-pink-select-2021.png',color:'粉色',hex:'#123',price:'25900',qty:8},
+                        {id:1,title:'iPhone13',cover:'iphone-13-green-select.png',color:'綠色',hex:'#475846',price:'25900',qty:3},
+                        {id:2,title:'iPhone13',cover:'iphone-13-blue-select-2021.png',color:'藍色',hex:'#447792',price:'25900',qty:0},
+                        {id:3,title:'iPhone13',cover:'iphone-13-midnight-select-2021.png',color:'午夜色',hex:'#41464c',price:'25900',qty:12},
+                        {id:4,title:'iPhone13',cover:'iphone-13-starlight-select-2021.png',color:'星光色',hex:'#fbf7f4',price:'25900',qty:1},
+                        {id:5,title:'iPhone13',cover:'iphone-13-pink-select-2021.png',color:'粉色',hex:'#fbe2dd',price:'25900',qty:8},
                     ],
                     currentIndex:0,
                 }
@@ -73,9 +77,18 @@
                 }
             },
             computed:{
-                currentImg(){
-                    return this.variants[this.currentIndex].cover;
-                }
+                current(){
+                    return this.variants[this.currentIndex];
+                },
+                // currentImg(){
+                //     return this.variants[this.currentIndex].cover;
+                // },
+                // color(){
+                //     return this.variants[this.currentIndex].color
+                // },
+                // hex(){
+                //     return this.variants[this.currentIndex].hex
+                // }
             }
         }).mount('#app')
     </script>
