@@ -89,6 +89,14 @@
                     <a href="#" class="btn btn-outline-danger btn-sm" @click="removeCart(idx)">移除</a>
                 </div>
             </div>
+            <hr>
+            <a 
+                href="#" 
+                class="btn btn-danger" 
+                @click="clearCart()"
+                v-show="carts.length"
+                >清除購物車</a>
+            <div v-show="!carts.length">目前尚無品項</div>
         </div>
     </div>
     
@@ -116,6 +124,11 @@
                     this.carts.splice(idx,1);
                     // this.carts = this.carts.filter((data,i) => i != idx);
                     return false;
+                },
+                clearCart(){
+                    if(confirm('確認清除購物車？')){
+                        this.carts.length = 0;
+                    }
                 }
             }
         }).mount('#app')
