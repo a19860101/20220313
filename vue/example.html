@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <section>
+            <h1>代辦項目</h1>
+            <ul>
+                <li v-for="list in lists">
+                    <input type="checkbox" :id="list.name" v-model="list.isComplete">
+                    <label :for="list.name">
+                        {{list.name}}
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <pre>
+            {{
+                lists   
+            }}
+        </pre>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    lists:[
+                        {name:'發票寄限掛',isComplete:false},
+                        {name:'洗衣服',isComplete:false},
+                        {name:'網站輪播處裡',isComplete:false},
+                        {name:'買晚餐',isComplete:false},
+                    ]
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
