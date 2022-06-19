@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            width: 1200px;
+            margin-inline: auto;
+        }
+        img {
+            width: 100%;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col-6 {
+            flex: 0 0 50%;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="row">
+            <div class="col-6">
+                <img src="https://picsum.photos/id/23/600" alt="">
+            </div>
+            <div class="col-6">
+                <h2>{{title}}</h2>
+                <div>
+                    {{desc}}
+                </div>
+                <a href="#">加入購物車</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    title:'iPhone 13',
+                    desc: '以 iPhone 8 或後續機型換購，獲享最高達 NT$3,000 – NT$19,500 折抵優惠**',
+                    variants:[
+                        {id:1,title:'iPhone13',cover:'',color:'綠色',hex:'#123',price:'25900',qty:3},
+                        {id:2,title:'iPhone13',cover:'',color:'綠色',hex:'#123',price:'25900',qty:0},
+                        {id:3,title:'iPhone13',cover:'',color:'綠色',hex:'#123',price:'25900',qty:12},
+                        {id:4,title:'iPhone13',cover:'',color:'綠色',hex:'#123',price:'25900',qty:1},
+                        {id:5,title:'iPhone13',cover:'',color:'綠色',hex:'#123',price:'25900',qty:8},
+                    ]
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
