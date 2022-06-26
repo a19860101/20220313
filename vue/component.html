@@ -8,24 +8,35 @@
     <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
+    <!-- slot 插槽 -->
     <div id="app">
-        <app-title></app-title>
-        <app-box></app-box>
+        <app-title>Hello Vue</app-title>
+        <app-title>Hello Components</app-title>
+        <app-title>Qwerty</app-title>
+        <app-box>123</app-box>
+        <app-box>asdf</app-box>
     </div>
     <script>
-        Vue.createApp({
+        let app = {
             data(){
                 return {}
             },
             components:{
                 'app-title':{
-                    template:`<h1>Hello Component!!!</h1>`
+                    // template:`<h1>Hello Component!!!</h1>`
+                    template:`
+                        <h1>
+                            <slot />
+                        </h1>
+                    `
                 },
                 'app-box':{
-                    template:`<div>Box</div>`
+                    template:`<div><slot /></div>`
                 }
             }
-        }).mount('#app');
+        }
+
+        Vue.createApp(app).mount('#app');
     </script>
 </body>
 </html>
