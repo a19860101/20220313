@@ -19,7 +19,9 @@
     <script>
         let app = {
             data(){
-                return {}
+                return {
+                    msg: 'hello'
+                }
             },
             components:{
                 'app-title':{
@@ -27,8 +29,14 @@
                     template:`
                         <h1>
                             <slot />
+                            {{msg}}
                         </h1>
-                    `
+                    `,
+                    data(){
+                        return {
+                            msg: 'hello'
+                        }
+                    }
                 },
                 'app-box':{
                     template:`<div><slot /></div>`

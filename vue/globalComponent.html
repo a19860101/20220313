@@ -20,9 +20,15 @@
         });
 
         app.component('app-button',{
-            template:`<button><slot /></button>`
+            template:`<button :disabled="isDisabled"><slot />{{msg}}</button>`,
+            data(){
+                return {
+                    msg:' qqq',
+                    isDisabled: false
+                }
+            }
         });
-        
+
         app.mount('#app')
     </script>
 </body>
