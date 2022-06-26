@@ -13,18 +13,18 @@
         <app-title>Hello Vue</app-title>
         <app-title>Hello Components</app-title>
         <app-title>Qwerty</app-title>
-        <app-box>123</app-box>
-        <app-box>asdf</app-box>
+        <app-box box-title="test"></app-box>
+        <app-box :box-title="msg"></app-box>
     </div>
     <script>
         let app = {
             data(){
                 return {
-                    msg: 'hello'
+                    msg: 'hello box'
                 }
             },
             components:{
-                'app-title':{
+                'app-title':{ 
                     // template:`<h1>Hello Component!!!</h1>`
                     template:`
                         <h1>
@@ -39,7 +39,8 @@
                     }
                 },
                 'app-box':{
-                    template:`<div><slot /></div>`
+                    props:['boxTitle'],
+                    template:`<div>{{boxTitle}}</div>`
                 }
             }
         }
