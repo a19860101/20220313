@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3"></script>
-    <style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <style>
         .primary {
             background-color: #4bdbff;
         }
@@ -16,14 +17,13 @@
         .danger {
             background-color: #ff2020;
         }
-    </style>
+    </style> -->
 </head>
 <body>
     <div id="app">
-        <app-button btnbg="primary">click</app-button>
-        <app-button btnbg="danger">more</app-button>
-        <app-button>hello</app-button>
-        <app-button btnbg="success">hello</app-button>
+        <app-button btn-style="primary">click</app-button>
+        <app-button btn-style="danger">more</app-button>
+        <app-button btn-style="success">more</app-button>
     </div>
     <script type="module">
         import App from './js/App.js';
