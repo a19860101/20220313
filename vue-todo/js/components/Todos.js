@@ -3,7 +3,8 @@ export default {
     components:{Todo},
     template:`
         <section>
-            <Todo :lists="listUncomplete"></Todo>
+            <Todo :lists="listFilter.uncomplete"></Todo>
+            <Todo :lists="listFilter.complete"></Todo>
         </section>
     `,
     // template:`
@@ -47,6 +48,12 @@ export default {
         },
         listUncomplete(){
             return this.lists.filter(data=>!data.isComplete)
+        },
+        listFilter(){
+            return {
+                complete:this.lists.filter(data=>data.isComplete),
+                uncomplete:this.lists.filter(data=>!data.isComplete)
+            }
         }
     }
 }
