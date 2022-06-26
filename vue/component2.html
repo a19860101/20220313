@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <app-title>Hello Module</app-title>
+        <app-title>Hello Component</app-title>
+        <app-button>asdf</app-button>
+        <app-button>234234</app-button>
+    </div>
+    <script type="module">
+        import AppButton from './js/AppButton.js';
+        import AppTitle from './js/AppTitle.js';
+        Vue.createApp({
+            data(){
+                return {}
+            },
+            components:{
+                'app-button': AppButton,
+                'app-title': AppTitle
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
