@@ -1,5 +1,7 @@
 export default {
-    props:['lists'],
+    props:{
+        lists:Array
+    },
     template:`   
         <section>
             <h1>代辦項目</h1>
