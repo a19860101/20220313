@@ -3,7 +3,7 @@ export default {
     components:{Todo},
     template:`
         <section>
-            <Todo :caption="title" :lists="lists"></Todo>
+            <Todo :lists="listUncomplete"></Todo>
         </section>
     `,
     // template:`
@@ -35,7 +35,7 @@ export default {
             title:'Todo List!!!',
             lists:[
                 {id:1,name:'發票寄限掛',isComplete:false},
-                {id:2,name:'洗衣服',isComplete:false},
+                {id:2,name:'洗衣服',isComplete:true},
                 {id:3,name:'網站輪播處裡',isComplete:false},
                 {id:4,name:'買晚餐',isComplete:false},
             ]
