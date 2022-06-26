@@ -1,17 +1,19 @@
+import List from './List.js';
 export default {
+    components: { List },
     props:{
-        lists:Array
+        lists:Array,
+        title:String
     },
     template:`   
         <section>
-            <h1>代辦項目</h1>
+            <h1>{{title}}</h1>
             <ul>
-                <li v-for="list in lists" :key="list.id">
-                    <input type="checkbox" :id="list.name" v-model="list.isComplete">
-                    <label :for="list.name">
-                        {{list.name}}
-                    </label>
-                </li>
+                <List 
+                    v-for="list in lists"
+                    :key="list.id"
+                    :list="list"
+                ></List>
             </ul>
         </section>
     `

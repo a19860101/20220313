@@ -3,8 +3,8 @@ export default {
     components:{Todo},
     template:`
         <section>
-            <Todo :lists="listFilter.uncomplete"></Todo>
-            <Todo :lists="listFilter.complete"></Todo>
+            <Todo :lists="listFilter.uncomplete" title="代辦事項"></Todo>
+            <Todo :lists="listFilter.complete" title="已完成"></Todo>
         </section>
     `,
     // template:`
