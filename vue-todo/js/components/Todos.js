@@ -2,31 +2,37 @@ import Todo from './Todo.js';
 export default {
     components:{Todo},
     template:`
-        <section v-show="listUncomplete.length">
-            <h1>代辦項目</h1>
-            <ul>
-                <li v-for="list in listUncomplete" :key="list.id">
-                    <input type="checkbox" :id="list.name" v-model="list.isComplete">
-                    <label :for="list.name">
-                        {{list.name}}
-                    </label>
-                </li>
-            </ul>
-        </section>
-        <section v-show="listComplete.length">
-            <h1>已完成</h1>
-            <ul>
-                <li v-for="list in listComplete" :key="list.id">
-                    <input type="checkbox" :id="list.name" v-model="list.isComplete">
-                    <label :for="list.name">
-                        {{list.name}}
-                    </label>
-                </li>
-            </ul>
+        <section>
+            <Todo :caption="title" :lists="lists"></Todo>
         </section>
     `,
+    // template:`
+    //     <section v-show="listUncomplete.length">
+    //         <h1>代辦項目</h1>
+    //         <ul>
+    //             <li v-for="list in listUncomplete" :key="list.id">
+    //                 <input type="checkbox" :id="list.name" v-model="list.isComplete">
+    //                 <label :for="list.name">
+    //                     {{list.name}}
+    //                 </label>
+    //             </li>
+    //         </ul>
+    //     </section>
+    //     <section v-show="listComplete.length">
+    //         <h1>已完成</h1>
+    //         <ul>
+    //             <li v-for="list in listComplete" :key="list.id">
+    //                 <input type="checkbox" :id="list.name" v-model="list.isComplete">
+    //                 <label :for="list.name">
+    //                     {{list.name}}
+    //                 </label>
+    //             </li>
+    //         </ul>
+    //     </section>
+    // `,
     data(){
         return {
+            title:'Todo List!!!',
             lists:[
                 {id:1,name:'發票寄限掛',isComplete:false},
                 {id:2,name:'洗衣服',isComplete:false},
