@@ -1,6 +1,7 @@
 export default {
+    props:['btnbg'],
     template:`
-        <button :disabled="isDisabled"><slot /></button>
+        <button :class="btnbg" :disabled="isDisabled"><slot /></button>
     `,
     data(){
         return {

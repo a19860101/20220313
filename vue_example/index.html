@@ -6,11 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        .primary {
+            background-color: #4bdbff;
+        }
+        .success {
+            background-color: green;
+        }
+        .danger {
+            background-color: #ff2020;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
-        <app-button>click</app-button>
-        <app-button>more</app-button>
+        <app-button btnbg="primary">click</app-button>
+        <app-button btnbg="danger">more</app-button>
+        <app-button>hello</app-button>
+        <app-button btnbg="success">hello</app-button>
     </div>
     <script type="module">
         import App from './js/App.js';
