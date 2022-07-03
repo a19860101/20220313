@@ -8,6 +8,10 @@ export default {
             <hr>
             <form @submit.prevent="add">
                 <input type="text" placeholder="新增事項" v-model="newList">
+                <input type="text" placeholder="標籤" list="tagList"  v-model="newTag"/ >
+                <datalist id="tagList">
+                    <option :value="tag" v-for="tag in tagList">{{tag}}</option>
+                </datalist>
                 <input type="submit" value="新增">
             </form>
         </section>
@@ -49,7 +53,8 @@ export default {
                 {id:7,name:'important 1',isComplete:false,tag:'重要'},
                 {id:8,name:'important 2',isComplete:false,tag:'重要'},
             ],
-            newList:''
+            newList:'',
+            newTag:'',
         }
     },
     methods:{
@@ -59,9 +64,11 @@ export default {
             this.lists.push({
                 id: this.lists.length + 1,
                 name: this.newList,
-                isComplete:false
+                isComplete:false,
+                tag: this.newTag
             })
             this.newList = '';
+            this.newTag = '';
         }
     },
     computed:{
@@ -76,6 +83,9 @@ export default {
                 complete:this.lists.filter(data=>data.isComplete),
                 uncomplete:this.lists.filter(data=>!data.isComplete)
             }
+        },
+        tagList(){
+            return new Set(this.lists.map(data=>data.tag));
         }
     }
 }
