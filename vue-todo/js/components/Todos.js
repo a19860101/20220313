@@ -43,16 +43,7 @@ export default {
     data(){
         return {
             title:'Todo List!!!',
-            lists:[
-                {id:1,name:'發票寄限掛',isComplete:false,tag:'重要'},
-                {id:2,name:'洗衣服',isComplete:true,tag:'普通'},
-                {id:3,name:'網站輪播處裡',isComplete:false,tag:'急件'},
-                {id:4,name:'買晚餐',isComplete:false,tag:'普通'},
-                {id:5,name:'test 1',isComplete:false,tag:'普通'},
-                {id:6,name:'test 2',isComplete:false,tag:'普通'},
-                {id:7,name:'important 1',isComplete:false,tag:'重要'},
-                {id:8,name:'important 2',isComplete:false,tag:'重要'},
-            ],
+            lists:'',
             newList:'',
             newTag:'',
         }
