@@ -1,8 +1,8 @@
 export default {
     props:{
         lists: Array,
-        currentTag: String,
-        modalValue: String,
+        // currentTag: tring,
+        modelValue: String,
     },
     // template:`
     // <div>
@@ -17,15 +17,15 @@ export default {
     <div>
         <button 
             v-for="tag in tags"
-            @click="$emit('change',tag)"
-            :class="{active: modalValue === tag}"
+            @click="$emit('update:modelValue',tag)"
+            :class="{active: modelValue === tag}"
         >{{tag}}</button>
     </div>
     `,
     
     computed:{
         tags(){
-            return ['全部',...new Set(this.lists.map(data => data.tag))];
+            return ['全部',...new Set(this.lists)];
         },
     }
 }

@@ -10,8 +10,7 @@ export default {
         <section>
             <h1>{{title}} ({{lists.length}})</h1>
             <Tag 
-                :lists="lists" 
-                :currentTag="currentTag" 
+                :lists="lists.map(data=>data.tag)" 
                 @change="currentTag = $event"
                 v-model="currentTag"
             />
