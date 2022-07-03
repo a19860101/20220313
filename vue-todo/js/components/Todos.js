@@ -48,6 +48,14 @@ export default {
             newTag:'',
         }
     },
+    created(){
+        fetch('http://localhost:3333/lists')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                this.lists = data
+            })
+    },
     methods:{
         add(e){
             // e.preventDefault();
