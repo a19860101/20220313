@@ -8,7 +8,7 @@ export default {
             <hr>
             <form @submit.prevent="add">
                 <input type="text" placeholder="新增事項" v-model="newList">
-                <input type="text" placeholder="標籤" list="tagList"  v-model="newTag"/ >
+                <input type="text" placeholder="標籤" list="tagList"  v-model="newTag" />
                 <datalist id="tagList">
                     <option :value="tag" v-for="tag in tagList">{{tag}}</option>
                 </datalist>
