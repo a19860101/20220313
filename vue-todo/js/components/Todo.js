@@ -12,6 +12,7 @@ export default {
                 <button 
                     v-for="tag in tags"
                     @click="currentTag = tag"
+                    :class="{active: currentTag === tag}"
                 >{{tag}}</button>
             </div>
             <ul>
