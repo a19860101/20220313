@@ -1,4 +1,5 @@
-<script setup>
+<script>
+    import Todo from './Todo.vue'
     export default {
         data(){
             return {
