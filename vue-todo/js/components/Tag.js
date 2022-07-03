@@ -1,6 +1,7 @@
 export default {
     props:{
-        lists: Array
+        lists: Array,
+        currentTag: String
     },
     // template:`
     // <div>
