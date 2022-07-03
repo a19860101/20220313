@@ -17,12 +17,18 @@ export default {
                     :list="list"
                 ></List>
             </ul>
+            {{currentTag}}
         </section>
     `,
     data(){
         return {
             currentTag:'全部',
         }
+    },
+    methods:{
+        // test(p){
+        //     this.currentTag = p;
+        // }
     },
     computed:{
       
