@@ -25,15 +25,19 @@ export default {
     `,
     data(){
         return {
-            currentTag:''
+            currentTag:'全部'
         }
     },
     computed:{
         tags(){
-            return new Set(this.lists.map(data => data.tag));
+            return ['全部',...new Set(this.lists.map(data => data.tag))];
         },
         filterLists(){
-            return this.lists.filter(data => data.tag===this.currentTag)
+            if(this.currentTag === '全部'){
+                return this.lists;
+            }else{
+                return this.lists.filter(data => data.tag===this.currentTag)
+            }
         }
     }
 }
