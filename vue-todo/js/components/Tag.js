@@ -1,7 +1,8 @@
 export default {
     props:{
         lists: Array,
-        currentTag: String
+        currentTag: String,
+        modalValue: String,
     },
     // template:`
     // <div>
@@ -17,7 +18,7 @@ export default {
         <button 
             v-for="tag in tags"
             @click="$emit('change',tag)"
-            :class="{active: currentTag === tag}"
+            :class="{active: modalValue === tag}"
         >{{tag}}</button>
     </div>
     `,

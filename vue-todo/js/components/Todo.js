@@ -9,7 +9,12 @@ export default {
     template:`   
         <section>
             <h1>{{title}} ({{lists.length}})</h1>
-            <Tag :lists="lists" :currentTag="currentTag" @change="currentTag = $event" />
+            <Tag 
+                :lists="lists" 
+                :currentTag="currentTag" 
+                @change="currentTag = $event"
+                v-model="currentTag"
+            />
             <ul>
                 <List 
                     v-for="list in filterLists"
