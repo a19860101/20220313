@@ -6,12 +6,27 @@ export default {
         lists:Array,
         title:String
     },
+    // template:`   
+    //     <section>
+    //         <h1>{{title}} ({{lists.length}})</h1>
+    //         <Tag 
+    //             :lists="lists.map(data=>data.tag)" 
+    //             @change="currentTag = $event"
+    //         />
+    //         <ul>
+    //             <List 
+    //                 v-for="list in filterLists"
+    //                 :key="list.id"
+    //                 :list="list"
+    //             ></List>
+    //         </ul>
+    //     </section>
+    // `,
     template:`   
         <section>
             <h1>{{title}} ({{lists.length}})</h1>
             <Tag 
                 :lists="lists.map(data=>data.tag)" 
-                @change="currentTag = $event"
                 v-model="currentTag"
             />
             <ul>
