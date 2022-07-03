@@ -1,6 +1,7 @@
 import List from './List.js';
+import Tag from './Tag.js';
 export default {
-    components: { List },
+    components: { List , Tag},
     props:{
         lists:Array,
         title:String
@@ -8,13 +9,7 @@ export default {
     template:`   
         <section>
             <h1>{{title}} ({{lists.length}})</h1>
-            <div>
-                <button 
-                    v-for="tag in tags"
-                    @click="currentTag = tag"
-                    :class="{active: currentTag === tag}"
-                >{{tag}}</button>
-            </div>
+            <Tag :lists="lists" />
             <ul>
                 <List 
                     v-for="list in filterLists"
@@ -30,9 +25,7 @@ export default {
         }
     },
     computed:{
-        tags(){
-            return ['全部',...new Set(this.lists.map(data => data.tag))];
-        },
+      
         filterLists(){
             if(this.currentTag === '全部'){
                 return this.lists;
