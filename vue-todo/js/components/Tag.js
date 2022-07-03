@@ -2,7 +2,8 @@ export default {
     props:{
         lists: Array,
         // currentTag: tring,
-        modelValue: String,
+        // modelValue: String,
+        cTag: String
     },
     // template:`
     // <div>
@@ -17,8 +18,8 @@ export default {
     <div>
         <button 
             v-for="tag in tags"
-            @click="$emit('update:modelValue',tag)"
-            :class="{active: modelValue === tag}"
+            @click="$emit('update:cTag',tag)"
+            :class="{active: cTag === tag}"
         >{{tag}}</button>
     </div>
     `,
