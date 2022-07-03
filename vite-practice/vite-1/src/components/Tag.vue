@@ -3,8 +3,8 @@ export default {
     props:{
         lists: Array,
         // currentTag: tring,
-        modelValue: String,
-        // cTag: String
+        // modelValue: String,
+        cTag: String
     },
     
     computed:{
@@ -18,8 +18,8 @@ export default {
     <div>
         <button 
             v-for="tag in tags"
-            @click="$emit('update:modelValue',tag)"
-            :class="{active: modelValue === tag}"
+            @click="$emit('update:cTag',tag)"
+            :class="{active: cTag === tag}"
             :key="tag"
         >{{tag}}</button>
     </div>

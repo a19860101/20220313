@@ -1,6 +1,9 @@
 <script>
     import Todo from './Todo.vue'
     export default {
+        components:{
+            Todo
+        },
         data(){
             return {
                 title:'Todo List!!!',

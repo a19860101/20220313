@@ -30,7 +30,7 @@
         <h1>{{title}} ({{lists.length}})</h1>
         <Tag 
             :lists="lists.map(data=>data.tag)" 
-            v-model="currentTag"
+            v-model:cTag="currentTag"
         />
         <ul>
             <List 
