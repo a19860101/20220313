@@ -9,7 +9,7 @@ export default {
     template:`   
         <section>
             <h1>{{title}} ({{lists.length}})</h1>
-            <Tag :lists="lists" @change="test" />
+            <Tag :lists="lists" @change="currentTag = $event" />
             <ul>
                 <List 
                     v-for="list in filterLists"
@@ -17,17 +17,11 @@ export default {
                     :list="list"
                 ></List>
             </ul>
-            {{tag}}
         </section>
     `,
     data(){
         return {
             currentTag:'全部',
-        }
-    },
-    methods:{
-        test(p){
-            this.currentTag = p;
         }
     },
     computed:{
