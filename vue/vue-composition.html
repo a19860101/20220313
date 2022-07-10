@@ -9,25 +9,30 @@
 </head>
 <body>
     <div id="app">
-        <h1>
-            {{title}}
-        </h1>
-        <div>
-            {{desc}}
-        </div>
-        <div>
-            {{users.name}}:{{users.mail}}
-        </div>
+        <input type="text" v-model="input">
+        <div>{{input}}</div>
+        <ul>
+            <li v-for="user in users" :key="user.id">
+                {{user.name}}
+            </li>
+        </ul>
     </div>
     <script>
         const {ref, reactive , createApp} = Vue;
         const App = {
             setup(){
-                // let title = 'hello vue';
-                let title = ref('hello vue');
-                let desc = ref('decription');
-                let users = reactive({name:'John',mail:'asdf@gmail.com'});
-                return { title,desc , users} 
+                const users = ref([
+                    {
+                        id: '1',
+                        name: 'John'
+                    },
+                    {
+                        id: '2',
+                        name: 'Mary'
+                    }
+                ]);
+                const input = ref('test');
+                return { users, input} 
             },
         }
         createApp(App).mount('#app');
