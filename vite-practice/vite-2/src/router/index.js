@@ -27,11 +27,18 @@ const routes = [
         // component: Contact
         // component: () => import('./views/Contact.vue')
         component: () => import('@/views/Contact.vue')
-    },{
+    },
+    {
         path: '/product/:id',
         name: 'product',
         component: ()=>import('@/views/Product.vue')
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'NotFound',
+        component : () => import('@/views/404.vue')
     }
+    
     
 ]
 
