@@ -17,9 +17,10 @@
             </li>
         </ul>
         <button @click="addUser()">click</button>
+        <div>目前人數:{{totalUser}}</div>
     </div>
     <script>
-        const {ref, reactive , createApp} = Vue;
+        const {ref, reactive , createApp,computed} = Vue;
         const App = {
             setup(){
                 
@@ -56,10 +57,15 @@
                 ]);
                 const addUser = ()=>{
                    users.push({id:users.length + 1,name: input.value});
+                   input.value = '';
                    console.log(users);
                 }
-                console.log(input)
-                return { users, input, addUser} 
+
+                const totalUser = computed(() => {
+                    return users.length;
+                });
+
+                return { users, input, addUser, totalUser} 
             },
         }
         createApp(App).mount('#app');
