@@ -16,12 +16,35 @@
                 {{user.name}}
             </li>
         </ul>
+        <button @click="addUser()">click</button>
     </div>
     <script>
         const {ref, reactive , createApp} = Vue;
         const App = {
             setup(){
-                const users = ref([
+                
+                const input = ref('');
+                // ref
+                // const users = ref([
+                //     {
+                //         id: '1',
+                //         name: 'John'
+                //     },
+                //     {
+                //         id: '2',
+                //         name: 'Mary'
+                //     }
+                // ]);
+                // const addUser = () => {
+                //     users.value.push({
+                //         id: users.value.length + 1,
+                //         name: input.value
+                //     })
+                //     console.log(users)
+                // }
+
+                // reactive
+                const users = reactive([
                     {
                         id: '1',
                         name: 'John'
@@ -31,8 +54,12 @@
                         name: 'Mary'
                     }
                 ]);
-                const input = ref('test');
-                return { users, input} 
+                const addUser = ()=>{
+                   users.push({id:users.length + 1,name: input.value});
+                   console.log(users);
+                }
+                console.log(input)
+                return { users, input, addUser} 
             },
         }
         createApp(App).mount('#app');
