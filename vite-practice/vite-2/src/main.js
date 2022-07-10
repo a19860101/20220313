@@ -18,19 +18,22 @@ const router = createRouter({
             path: '/about',
             name: 'about',
             // component: About
-            component: () => import('./views/About.vue')
+            // component: () => import('./views/About.vue')
+            component: () => import('@/views/About.vue')
         },
         {
             path: '/service',
             name: 'service',
             // component: Service
-            component: () => import('./views/Service.vue')
+            // component: () => import('./views/Service.vue')
+            component: () => import('@/views/Service.vue')
         },
         {
             path: '/contact',
             name: 'contact',
             // component: Contact
-            component: () => import('./views/Contact.vue')
+            // component: () => import('./views/Contact.vue')
+            component: () => import('@/views/Contact.vue')
         }
         
     ]
