@@ -1,4 +1,24 @@
 import { createApp } from 'vue'
+import {createRouter} from 'vue-router'
 import App from './App.vue'
+import Home from './views/Home.vue'
+import About from './views/About.vue'
 
-createApp(App).mount('#app')
+const router = createRouter({
+    routes:[
+        {
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/about',
+            name: 'about',
+            component: About
+        }
+    ]
+});
+
+createApp(App)
+.use(router)
+.mount('#app')
