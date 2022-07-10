@@ -28,7 +28,7 @@ const routes = [
         // component: () => import('./views/Contact.vue')
         component: () => import('@/views/Contact.vue')
     },{
-        path: '/product/:title',
+        path: '/product/:id',
         name: 'product',
         component: ()=>import('@/views/Product.vue')
     }
