@@ -19,7 +19,24 @@ const routes = [
         name: 'service',
         // component: Service
         // component: () => import('./views/Service.vue')
-        component: () => import('@/views/Service.vue')
+        component: () => import('@/views/Service.vue'),
+        children: [
+            {
+                path: 'first',
+                name: 'service.first',
+                component: ()=>import('@/views/ServiceFirst.vue')
+            },
+            {
+                path: 'second',
+                name: 'service.second',
+                component: ()=>import('@/views/ServiceSecond.vue')
+            },
+            {
+                path: 'third',
+                name: 'service.third',
+                component: ()=>import('@/views/ServiceThird.vue')
+            }
+        ]
     },
     {
         path: '/contact',
