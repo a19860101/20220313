@@ -1,19 +1,23 @@
 <script>
+import Nav from '@/components/Nav.vue'
+export default {
+  components: {Nav}
+}
 </script>
 
 <template>
   <div>
     <h1>My Vite App</h1>
-    <nav>
-      <router-link to="/">Home</router-link> | 
-      <router-link to="/about">About</router-link> | 
-      <router-link to="/service">Service</router-link> | 
-      <router-link to="/contact">Contact</router-link>
-    </nav>
+    <Nav />
     <router-view></router-view>
   </div>
 </template>
 
 <style>
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI';
+}
 </style>

@@ -1,11 +1,11 @@
 import {createRouter, createWebHistory} from 'vue-router'
-// import Home from '@/views/Home.vue'
+import Home from '@/views/Home.vue'
 
 const routes = [
     {
         path: '/',
         name: 'home',
-        component: () => import('@/views/Home.vue')
+        component: Home
     },
     {
         path: '/about',
@@ -34,7 +34,8 @@ const routes = [
 
 const router = createRouter({
     history:createWebHistory(),
-    routes
+    routes,
+    linkActiveClass: 'nav-active-link'
 });
 
 export default router;
