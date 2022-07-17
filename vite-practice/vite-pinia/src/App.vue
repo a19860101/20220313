@@ -1,10 +1,11 @@
 <script setup>
-  import Counter  from '@/components/Counter.vue'
+  // import Counter  from '@/components/Counter.vue'
+  import Todos from '@/components/Todos.vue'
 </script>
 
 <template>
   <div>
-    <h1>test</h1>
-    <Counter />
+    <!-- <Counter /> -->
+    <Todos />
   </div>
 </template>
