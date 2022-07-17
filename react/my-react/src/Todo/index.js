@@ -26,13 +26,14 @@ const Todo = ()=>{
     }
 
     function addItem(){
-        setTodos(function(prevData){
-            return prevData.push({
-                id: 9,
-                name: 'test',
+        setTodos(prevData => {
+            return [...prevData,{
+                id: todos.length+1,
+                name: input,
                 isCompleted: false
-            })
+            }]
         })
+        setInput('');
         console.log(todos)
     }
     return (
