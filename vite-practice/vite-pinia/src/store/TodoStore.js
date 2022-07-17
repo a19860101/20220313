@@ -29,5 +29,14 @@ export const useTodoStore = defineStore('TodoStore',{
         unCompletedTodos: (state)=>{
             return state.todos.filter(data=>data.isCompleted === false)
         }
+    },
+    actions: {
+        createNewItem(data){
+            this.todos.push({
+                id:this.todos.length + 1,
+                name: data,
+                isCompleted: false
+            })
+        }
     }
 })
