@@ -1,12 +1,9 @@
-import Test from './Test.js'
-
+import './App.css'
+import Counter from './Counter'
 function App() {
   return (
     <div className="App">
-      <Test name="john"/>
-      <Test name="george"/>
-      <Test name="mary"/>
-      <Test name="zoy"/>
+      <Counter />
     </div>
   );
 }
