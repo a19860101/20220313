@@ -21,5 +21,13 @@ export const useTodoStore = defineStore('TodoStore',{
                 },
             ]
         }
+    },
+    getters: {
+        completedTodos: (state)=>{
+            return state.todos.filter(data=>data.isCompleted === true)
+        },
+        unCompletedTodos: (state)=>{
+            return state.todos.filter(data=>data.isCompleted === false)
+        }
     }
 })
