@@ -3,10 +3,11 @@
     import {storeToRefs} from 'pinia'
     const CounterStore = useCounterStore();
 
-    const {count,test} =storeToRefs(CounterStore);
+    const {count} =storeToRefs(CounterStore);
 
     function plus(){
         CounterStore.countPlus();
+        console.log(CounterStore);
     }
     function minus(){
         CounterStore.countMinus();
@@ -18,6 +19,6 @@
         <button @click="plus()">+</button>
         <button @click="minus()">-</button>
         <h1>{{count}}</h1>
-        <div>{{test}}</div>
+        <h1>{{CounterStore.count}}</h1>
     </div>
 </template>

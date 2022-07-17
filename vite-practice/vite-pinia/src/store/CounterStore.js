@@ -6,15 +6,14 @@ export const useCounterStore = defineStore('CounterStore',{
     state: () => {
         return {
             count: 12,
-            test: true
         }
     },
     actions: {
         countPlus(){
-            this.count + 1;
+            this.count += 1;
         },
         countMinus(){
-            this.count - 1;
+            this.count -= 1;
         }
     }
     // getters
