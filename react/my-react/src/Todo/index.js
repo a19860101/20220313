@@ -19,9 +19,17 @@ const Todo = ()=>{
         },
     ])
 
+    const [input, setInput] = useState('');
+    function handleInput(e){
+        setInput(e.target.value);
+        console.log(input)
+    }
     return (
         <>
             <h1>Todo</h1>
+            <input type="text"  value={input} onChange={handleInput}/>
+            <button>New Item</button>
+            <div>{input}</div>
             <div>
                 {
                     todos.map(todo => <List name={todo.name} isCompleted={todo.isCompleted} key={todo.id} />)
