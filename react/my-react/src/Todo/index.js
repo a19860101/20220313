@@ -24,12 +24,22 @@ const Todo = ()=>{
         setInput(e.target.value);
         console.log(input)
     }
+
+    function addItem(){
+        setTodos(function(prevData){
+            return prevData.push({
+                id: 9,
+                name: 'test',
+                isCompleted: false
+            })
+        })
+        console.log(todos)
+    }
     return (
         <>
             <h1>Todo</h1>
             <input type="text"  value={input} onChange={handleInput}/>
-            <button>New Item</button>
-            <div>{input}</div>
+            <button onClick={addItem}>New Item</button>
             <div>
                 {
                     todos.map(todo => <List name={todo.name} isCompleted={todo.isCompleted} key={todo.id} />)
