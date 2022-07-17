@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import List from './components/List'
 const Todo = ()=>{
    const [todos, setTodos] = useState([
         {
@@ -23,12 +24,7 @@ const Todo = ()=>{
             <h1>Todo</h1>
             <div>
                 {
-                    todos.map(todo=>
-                        <>
-                            <div>{todo.name}</div>
-                            <div>{todo.id}</div>
-                        </>
-                    )
+                    todos.map(todo => <List name={todo.name} isCompleted={todo.isCompleted} key={todo.id} />)
                 }
             </div>
         </>
