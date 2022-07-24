@@ -1,3 +1,4 @@
-import './index.css'
+import './index.scss'
+
 let test = 'helloasdf';
 console.log(test)
