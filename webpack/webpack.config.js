@@ -13,11 +13,19 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.html$/i,
+                loader: 'html-loader'
+            },
+            {
                 test: /\.s[ac]ss$/i,
                 // use: ["style-loader", "css-loader"],
                 use: [MiniCssExtractPlugin.loader, "css-loader","sass-loader"],
                 // use: ["style-loader", "css-loader", "sass-loader"],
             },
+            {
+                test: /\.(png|jpe?g|gif|webp|svg)/,
+                type: 'asset'
+            }
         ],
     },
     plugins: [
