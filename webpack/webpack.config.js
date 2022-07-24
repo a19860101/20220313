@@ -52,4 +52,7 @@ module.exports = {
         ],
         port: 5432,
     },
+    performance: {
+        maxAssetSize: 100000000,
+    },
 };

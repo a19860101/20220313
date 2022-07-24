@@ -1,0 +1,1 @@
+{"version":3,"file":"js/main.5fcc5d26c30808922025.bundle.js","mappings":"mBAGAA,QAAQC,IADG,Y","sources":["webpack://webpack/./src/index.js"],"sourcesContent":["import './index.scss'\r\n\r\nlet test = 'helloasdf';\r\nconsole.log(test)"],"names":["console","log"],"sourceRoot":""}
