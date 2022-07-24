@@ -1,2 +1,3 @@
-let test = 'hello';
+import './index.css'
+let test = 'helloasdf';
 console.log(test)
